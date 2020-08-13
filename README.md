@@ -22,7 +22,7 @@ This check requires a recent version of the 389 directory server with support fo
 The design has been described in [Replication Agreement Status Message Improvements](http://www.port389.org/docs/389ds/design/repl-agmt-status-design.html) and was implemented in [#49602 Improve replication status messages](https://pagure.io/389-ds-base/issue/49602)
 
 
-| *Paraemter* | *Description* | *Default* | *Comment* |
+| *Parameter* | *Description* | *Default* | *Comment* |
 |:------------|:--------------|:---------:|:----------|
 | `--ca-cert=<file>` | CA certificate for validation of the server SSL certificate | - | - |
 | `--domain=<domain>` | LDAP domain | - | **manatory** |
