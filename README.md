@@ -1,3 +1,7 @@
+**_Note:_** Because I'm running my own servers for several years, main development is done at at https://git.ypbind.de/cgit/check_389ds_replication/
+
+----
+
 # Preface
 In larger LDAP setups (with 389 directory sever as LDAP server) the data is replicated to one or more LDAP master and/or slave servers.
 To ensure data integrity and consistency the state of the replication should be checked at regular intervals.
