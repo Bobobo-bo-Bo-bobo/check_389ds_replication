@@ -1,7 +1,7 @@
 package main
 
 const name = "check_389ds_replication"
-const version = "1.0.0-20200812"
+const version = "1.0.0"
 
 const versionText = `%s version %s
 Copyright (C) 2020 by Andreas Maus <maus@ypbind.de>
@@ -27,7 +27,10 @@ const helpText = `Usage: %s [--ca-cert=<file>] --domain<domain> [--help] [--inse
   --insecure                Skip SSL verification of server certificate.
 
   --password=<pass>         Authenticate using password of <pass>.
+
   --password-file=<file>    Authenticate using password read from <file>
+                            Only the first line of the file will be interpreted as password.
+
                             Password is mandatory, either from the command line or read from file.
                             --password and --password-file are mutually exclusive.
 
