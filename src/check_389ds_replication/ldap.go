@@ -9,7 +9,7 @@ import (
 	"strings"
 	"time"
 
-	ldap "gopkg.in/ldap.v3"
+	ldap "github.com/go-ldap/ldap/v3"
 )
 
 func connectAndBind(u string, i bool, ca string, t time.Duration, us string, p string) (*ldap.Conn, error) {
