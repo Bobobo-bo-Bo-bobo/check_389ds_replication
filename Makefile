@@ -4,16 +4,20 @@ BINDIR	= $(CURDIR)/bin
 PROGRAMS = check_389ds_replication
 
 depend:
-	env GOPATH=$(GOPATH) go get -u gopkg.in/ldap.v3
+	# go mod will handle dependencies
 
 build:
-	env GOPATH=$(GOPATH) go install $(PROGRAMS)
+	cd $(CURDIR)/src/check_389ds_replication && go get check_389ds_replication/src/check_389ds_replication && go build -o $(CURDIR)/bin/check_389ds_replication
 
 destdirs:
 	mkdir -p -m 0755 $(DESTDIR)/usr/lib64/nagios/plugins
 
 strip: build
 	strip --strip-all $(BINDIR)/check_389ds_replication
+
+ifneq (, $(shell which upx 2>/dev/null))
+	upx -9 $(BINDIR)/check_389ds_replication
+endif
 
 install: strip destdirs install-bin
 
@@ -29,7 +33,7 @@ distclean: clean
 	rm -rf src/golang.org/
 
 uninstall:
-	/bin/rm -f $(DESTDIR)/usr/bin
+	/bin/rm -f $(DESTDIR)/usr/lib64/nagios/plugins/check_389ds_replication
 
 all: depend build strip install
 
